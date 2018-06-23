@@ -1,0 +1,262 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face{
+	font-family: 'san-bold';
+	src: url(../fonts/Sansita-Bold.ttf);
+}
+@font-face{
+	font-family: 'san-reg';
+	src: url(../fonts/Sansita-Regular.ttf);
+}
+@font-face{
+    font-family:'FontAwesome';
+    src:url(fonts/FontAwesome.otf);
+    src:url(fonts/fontawesome-webfont.eot);
+    src:url(fonts/fontawesome-webfont.svg);
+    src:url(fonts/fontawesome-webfont.ttf);
+    src:url(fonts/fontawesome-webfont.woff);
+    src:url(fonts/fontawesome-webfont.woff2);
+}
+body{
+	margin: 0px;
+	padding: 0px;
+        overflow-x: hidden;
+}
+.Banner {
+    background: #c00a27;
+    padding: 10px 0px 20px 0px;
+}
+.logo h1{
+	font-family: san-bold;
+	color: white;
+}
+.logo a:hover, .logo a:focus {
+    color: transparent;
+    text-decoration: none;
+}
+
+.cart {
+    margin: 0 auto;
+    display: table;
+    margin-top: 20px;
+}
+.cart a {
+    border: 1px solid green;
+    font-family: san-reg;
+    font-size: 30px;
+    background: green;
+    color: white;
+    padding: 5px 15px;
+}
+.logo img {
+    float: left;
+    position: relative;
+    bottom: 15px;
+    margin-right: 10px;
+}
+ul.menu-pane, ol.menu-pane {
+   margin-bottom: 35px;
+}
+.menu-pane li {
+    float: left;
+    margin-right: 40px;
+	list-style-type: none;
+}
+.menu-pane a {
+    text-decoration: none;
+    color: white;
+    font-family: san-reg;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+.menu-pane a:hover, .menu-pane a:focus {
+    color: white;
+    text-decoration: none;
+}
+.menu-pane a:hover{
+	border-bottom: 3px solid orange;
+	
+}
+.menu-pane li.select {
+    border-bottom: 3px solid orange;
+    padding-bottom: 18px;
+}
+.modal-pane .btn-info {
+    color: #fff;
+    background-color: green;
+    border-color: green;
+	margin-top: 22px;
+	float: right;
+}
+.fa-shopping-cart:before {
+    content: "\f07a";
+    position: relative;
+    top: 30px;
+    color: white;
+}
+.Banner-2 {
+    background-color: #c00a27;
+    
+}
+.menu-pane-2 li {
+    float: left;
+    margin: 10px 50px 10px 50px;
+    list-style-type: none;
+}
+.menu-pane-2 li a {
+    color: #c5bfbf;
+    font-family: san-reg;
+    font-size: 25px;
+	text-decoration: none;
+}
+.menu-2 {
+    border-top: 1px solid rgb(199, 83, 102);
+    padding: 10px 0 10px 0;
+}
+.menu-pane-2 li a:hover{
+	color: white;
+}
+ul.menu-pane-2 {
+    margin: 0 auto;
+    display: table;
+}
+.menu-pane-2 img {
+    position: relative;
+    bottom: 5px;
+    right: 10px;
+}
+.AbtImg {
+    margin-bottom: 40px;
+}
+.img-con {
+    margin-bottom: 90px;
+}
+.img-con h3 {
+    margin-top: 40px;
+    font-family: san-reg;
+    font-size: 22px;
+}
+.header {
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 65px;
+    font-family: san-reg;
+}
+.piz {
+    padding-bottom: 50px;
+}
+p.abt {
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 15px;
+    font-family: san-reg;
+}
+.piz img {
+    margin-bottom: 50px;
+}
+.piz p {
+    font-family: san-reg;
+    font-size: 17px;
+}
+.piz h3{
+    font-family: san-reg;
+}
+.msg {
+    padding-bottom: 50px;
+}
+.msg h2 {
+    margin-top: 50px;
+    text-align: center;
+    font-family: san-reg;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.msg p {
+    font-family: inherit;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+h4.mg0, h4.ad0 {
+    font-family: san-reg;
+    font-size: 21px;
+    margin-bottom: 23px;
+    font-weight: bold;
+}
+p.mg, p.ad {
+    font-family: sans-serif;
+    text-align: left;
+    font-size: 16px;
+    margin-top: 30px;
+    line-height: 26px;
+    margin-bottom: 60px;
+}
+
+.msg input.form-control {
+    border-radius: 15px;
+    height: 45px;
+    font-size: 21px;
+}
+.msg label {
+    margin-bottom: 30px;
+    font-size: 17px;
+}
+.msg label.sec {
+    margin-top: 50px;
+}
+h4.mg0:before, h4.ad0:before {
+    content: '';
+    border-bottom: 2px solid #c00a27;
+    width: 71px;
+    position: absolute;
+    top: 45px;
+}
+.address h3 {
+    font-family: san-reg;
+    text-align: center;
+    margin-bottom: 22px;
+}
+.msg table.week {
+    text-align: center;
+    line-height: 25px;
+    font-family: cursive;
+    font-size: 18px;
+}
+.txtar textarea.form-control {
+    border-radius: 15px;
+    font-size: 21px;
+}
+.txtar label {
+    margin-top: 70px;
+}
+.car h3 {
+    margin-top: 85px;
+    font-family: san-reg;
+    text-align: center;
+}
+.txtar input.btn {
+    color: white;
+    background: #c00a27;
+    font-size: 20px;
+    font-family: san-reg;
+    border-radius: 28px;
+    position: relative;
+    left: 40%;
+    top: 25px;
+    
+    padding: 15px 30px;
+}
+.txtar input.btn:focus{
+    outline: none;
+}
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('images/default.gif') 50% 50% no-repeat rgb(249,249,249);
+}
+
+
