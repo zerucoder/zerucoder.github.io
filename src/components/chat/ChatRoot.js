@@ -9,6 +9,7 @@ import { Grid, Paper } from "@material-ui/core";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import "./Chat.css";
 import { blueGrey } from "@material-ui/core/colors";
+import { connect } from "react-redux";
 
 const theme = createMuiTheme({
   palette: {
@@ -20,30 +21,13 @@ const theme = createMuiTheme({
 });
 
 class ChatRoot extends Component {
+  componentDidMount = () => {};
+
   state = {
     roomId: null,
     messages: [],
     joinableRooms: [],
     joinedRooms: []
-  };
-
-  componentDidMount = () => {
-    const chatManager = new Chatkit.ChatManager({
-      instanceLocator,
-      userId: "zeru",
-      tokenProvider: new Chatkit.TokenProvider({
-        url: tokenUrl
-      })
-    });
-
-    chatManager
-      .connect()
-      .then(currentUser => {
-        this.currentUser = currentUser;
-        this.getRooms();
-        console.log(this.currentUser);
-      })
-      .catch(err => console.log("error on connecting", err));
   };
 
   getRooms = () => {
@@ -99,6 +83,24 @@ class ChatRoot extends Component {
   };
 
   render() {
+    const { profile } = this.props;
+
+    const chatManager = new Chatkit.ChatManager({
+      instanceLocator,
+      userId: "" + profile.firstname,
+      tokenProvider: new Chatkit.TokenProvider({
+        url: tokenUrl
+      })
+    });
+
+    chatManager
+      .connect()
+      .then(currentUser => {
+        this.currentUser = currentUser;
+        this.getRooms();
+        console.log(this.currentUser);
+      })
+      .catch(err => console.log("error on connecting", err));
     return (
       <MuiThemeProvider theme={theme}>
         <div className="chatbox" style={{ backgroundColor: "#212121" }}>
@@ -143,4 +145,10 @@ class ChatRoot extends Component {
   }
 }
 
-export default ChatRoot;
+const mapStateToProps = state => {
+  return {
+    profile: state.firebase.profile
+  };
+};
+
+export default connect(mapStateToProps)(ChatRoot);

@@ -3,8 +3,21 @@ import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { signUp, close } from "../../store/actions/authActions";
 import Modal from "../layout/Modal";
+// import chatServer from "@pusher/chatkit-server";
+import { tokenUrl, instanceLocator } from "../../config/chatkitConfig";
+const chatServer = require("@pusher/chatkit-server");
+
+let chatkit = null;
 
 class Signup extends Component {
+  componentDidMount = () => {
+    chatkit = new chatServer.default({
+      instanceLocator,
+      key:
+        "e0cc16b3-f6c2-40ba-9982-a21d19f26acb:nFXv43RkFPk+zOljT3hFdSYylJf8OZ1HlaKPCWWGGB0="
+    });
+  };
+
   state = {
     firstname: "",
     lastname: "",
@@ -21,6 +34,17 @@ class Signup extends Component {
     e.preventDefault();
     console.log(this.state);
     this.props.signUp(this.state);
+    chatkit
+      .createUser({
+        id: this.state.firstname,
+        name: this.state.firstname
+      })
+      .then(() => {
+        console.log("User created successfully");
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
   render() {
     const { auth, authError, errorModal } = this.props;

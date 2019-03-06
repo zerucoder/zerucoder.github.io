@@ -7,6 +7,8 @@
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
     "@pusher/chatkit": "^0.7.18",
+    "@pusher/chatkit-client": "^1.3.2",
+    "@pusher/chatkit-server": "^1.0.6",
     "firebase": "^5.8.3",
     "moment": "^2.24.0",
     "react": "^16.8.2",
