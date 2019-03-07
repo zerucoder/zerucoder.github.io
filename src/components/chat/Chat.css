@@ -9,3 +9,8 @@
 .bottom-box {
   padding: 5px;
 }
+.chat-message {
+  padding: 8px;
+  width: max-content;
+  margin: 8px;
+}
