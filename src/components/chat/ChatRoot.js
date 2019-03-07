@@ -103,7 +103,7 @@ class ChatRoot extends Component {
       .catch(err => console.log("error on connecting", err));
     return (
       <MuiThemeProvider theme={theme}>
-        <div className="chatbox" style={{ backgroundColor: "#212121" }}>
+        <div className="chatbox">
           <Grid container direction="row">
             <Grid item xs={9}>
               <Paper square className="box">
