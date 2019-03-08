@@ -6,20 +6,11 @@ import SendMessageForm from "./SendMessageForm";
 import RoomList from "./RoomList";
 import NewRoomForm from "./NewRoomForm";
 import { Grid, Paper } from "@material-ui/core";
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+
 import "./Chat.css";
-import { blueGrey } from "@material-ui/core/colors";
+
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-
-const theme = createMuiTheme({
-  palette: {
-    primary: blueGrey
-  },
-  typography: {
-    useNextVariants: true
-  }
-});
 
 class ChatRoot extends Component {
   componentDidMount = () => {};
@@ -103,46 +94,42 @@ class ChatRoot extends Component {
         console.log(this.currentUser);
       })
       .catch(err => console.log("error on connecting", err));
+
     return (
-      <MuiThemeProvider theme={theme}>
-        <div className="chatbox">
-          <Grid container direction="row">
-            <Grid item xs={9}>
-              <Paper square className="box">
-                <MessageList
-                  roomId={this.state.roomId}
-                  messages={this.state.messages}
-                />
-              </Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <Paper square className="box">
-                <RoomList
-                  subscribeToRoom={this.subscribeToRoom}
-                  rooms={[
-                    ...this.state.joinableRooms,
-                    ...this.state.joinedRooms
-                  ]}
-                  roomId={this.state.roomId}
-                />
-              </Paper>
-            </Grid>
-            <Grid item xs={9}>
-              <Paper square className="bottom-box">
-                <SendMessageForm
-                  disabled={!this.state.roomId}
-                  sendMessage={this.sendMessage}
-                />
-              </Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <Paper square className="bottom-box">
-                <NewRoomForm createRoom={this.createRoom} />
-              </Paper>
-            </Grid>
+      <div className="chatbox">
+        <Grid container direction="row">
+          <Grid item xs={9}>
+            <Paper square className="box">
+              <MessageList
+                roomId={this.state.roomId}
+                messages={this.state.messages}
+              />
+            </Paper>
           </Grid>
-        </div>
-      </MuiThemeProvider>
+          <Grid item xs={3}>
+            <Paper square className="box">
+              <RoomList
+                subscribeToRoom={this.subscribeToRoom}
+                rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]}
+                roomId={this.state.roomId}
+              />
+            </Paper>
+          </Grid>
+          <Grid item xs={9}>
+            <Paper square className="bottom-box">
+              <SendMessageForm
+                disabled={!this.state.roomId}
+                sendMessage={this.sendMessage}
+              />
+            </Paper>
+          </Grid>
+          <Grid item xs={3}>
+            <Paper square className="bottom-box">
+              <NewRoomForm createRoom={this.createRoom} />
+            </Paper>
+          </Grid>
+        </Grid>
+      </div>
     );
   }
 }

@@ -46,6 +46,7 @@ class Signup extends Component {
         console.log(err);
       });
   };
+
   render() {
     const { auth, authError, errorModal } = this.props;
     if (auth.uid) return <Redirect to="/" />;

@@ -6,32 +6,24 @@ import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { Redirect } from "react-router-dom";
 import { Grid, Paper } from "@material-ui/core";
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
-import "./Dashboard.css";
 
-const theme = createMuiTheme({
-  palette: {
-    type: "light"
-  }
-});
+import "./Dashboard.css";
 
 class Dashboard extends Component {
   render() {
     const { projects, auth, notifications } = this.props;
     if (!auth.uid) return <Redirect to="/signin" />;
     return (
-      <MuiThemeProvider theme={theme}>
-        <Grid container spacing={16}>
-          <Grid item xs={8}>
-            <ProjectList projects={projects} />
-          </Grid>
-          <Grid item xs={4}>
-            <Paper className="dashboard" square>
-              <Notification notifications={notifications} />
-            </Paper>
-          </Grid>
+      <Grid container spacing={16}>
+        <Grid item xs={8}>
+          <ProjectList projects={projects} />
         </Grid>
-      </MuiThemeProvider>
+        <Grid item xs={4}>
+          <Paper className="dashboard" square>
+            <Notification notifications={notifications} />
+          </Paper>
+        </Grid>
+      </Grid>
 
       // <div className="dashboard container">
       //   <div className="row">

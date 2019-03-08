@@ -1,14 +1,8 @@
 import React, { Component } from "react";
 import { Fab, Input, TextField } from "@material-ui/core";
 import { Add } from "@material-ui/icons";
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
-import { pink } from "@material-ui/core/colors";
 
-const theme = createMuiTheme({
-  palette: {
-    primary: pink
-  }
-});
+import { pink } from "@material-ui/core/colors";
 
 class NewRoomForm extends Component {
   state = {
@@ -30,17 +24,15 @@ class NewRoomForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <MuiThemeProvider theme={theme}>
-          <TextField
-            defaultValue={this.state.roomName}
-            label="Add Room"
-            variant="outlined"
-            required
-          />
-          <Fab size="small" color="secondary" aria-label="Add" type="submit">
-            <Add />
-          </Fab>
-        </MuiThemeProvider>
+        <TextField
+          defaultValue={this.state.roomName}
+          label="Add Room"
+          variant="outlined"
+          required
+        />
+        <Fab size="small" color="secondary" aria-label="Add" type="submit">
+          <Add />
+        </Fab>
 
         {/* <button
           id="create-room-btn"
