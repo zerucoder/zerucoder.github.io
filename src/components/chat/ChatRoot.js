@@ -10,6 +10,7 @@ import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import "./Chat.css";
 import { blueGrey } from "@material-ui/core/colors";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 const theme = createMuiTheme({
   palette: {
