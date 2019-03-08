@@ -8,6 +8,9 @@ import { AccountCircle } from "@material-ui/icons/";
 const SignedOutLinks = props => {
   return (
     <div>
+      <Button component={Link} to="/chat" color="inherit" size="large">
+        chat
+      </Button>
       <Button component={Link} to="/quiznew" color="inherit" size="large">
         Test
       </Button>

@@ -83,7 +83,8 @@ class ChatRoot extends Component {
   };
 
   render() {
-    const { profile } = this.props;
+    const { profile, auth } = this.props;
+    if (!auth.uid) return <Redirect to="/signin" />;
 
     const chatManager = new Chatkit.ChatManager({
       instanceLocator,
@@ -147,7 +148,8 @@ class ChatRoot extends Component {
 
 const mapStateToProps = state => {
   return {
-    profile: state.firebase.profile
+    profile: state.firebase.profile,
+    auth: state.firebase.auth
   };
 };
 
