@@ -99,7 +99,7 @@ class ChatRoot extends Component {
       <div className="chatbox">
         <Grid container direction="row">
           <Grid item xs={9}>
-            <Paper square className="box">
+            <Paper square className="box scroll2">
               <MessageList
                 roomId={this.state.roomId}
                 messages={this.state.messages}
@@ -107,7 +107,7 @@ class ChatRoot extends Component {
             </Paper>
           </Grid>
           <Grid item xs={3}>
-            <Paper square className="box">
+            <Paper square className="box scroll2">
               <RoomList
                 subscribeToRoom={this.subscribeToRoom}
                 rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]}

@@ -5,7 +5,7 @@
 .box {
   padding: 15px;
   overflow: scroll;
-  height: 522px;
+  height: 616px;
 }
 .bottom-box {
   height: 70px;
@@ -15,4 +15,12 @@
   padding: 8px;
   width: max-content;
   margin: 8px;
+}
+
+.scroll2::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scroll2::-webkit-scrollbar-thumb {
+  background: #c8c8c8;
 }
